@@ -18,13 +18,12 @@ $(function(){
                 statusCode: {
                     404: function () {
                         aaa = 200;
-                        console.log(1)
+                        
                     }
                 }
             });
     var a = $.Deferred();
             $.when(delBook(8)).done(function(){
-                console.log(aaa)
                 expect(200).toEqual(aaa);
             });
 
