@@ -1,0 +1,102 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'grunt-contrib-cssmain',
+1 verbose cli   '--save-dev' ]
+2 info using npm@2.0.0
+3 info using node@v0.10.32
+4 verbose node symlink /usr/local/bin/node
+5 warn package.json library@1.0.0 No repository field.
+6 warn package.json library@1.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'grunt-contrib-cssmain', null ]
+9 verbose cache add spec="grunt-contrib-cssmain" args=["grunt-contrib-cssmain",null]
+10 verbose parsed spec { raw: 'grunt-contrib-cssmain',
+10 verbose parsed spec   scope: null,
+10 verbose parsed spec   name: 'grunt-contrib-cssmain',
+10 verbose parsed spec   rawSpec: '',
+10 verbose parsed spec   spec: '*',
+10 verbose parsed spec   type: 'range' }
+11 verbose parsed spec { raw: 'grunt-contrib-cssmain',
+11 verbose parsed spec   scope: null,
+11 verbose parsed spec   name: 'grunt-contrib-cssmain',
+11 verbose parsed spec   rawSpec: '',
+11 verbose parsed spec   spec: '*',
+11 verbose parsed spec   type: 'range' }
+12 verbose addNamed [ 'grunt-contrib-cssmain', '*' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile 1cb9a301-grunt-contrib-cssmain grunt-contrib-cssmain@*
+15 verbose lock grunt-contrib-cssmain@* /Users/hzchen/.npm/1cb9a301-grunt-contrib-cssmain.lock
+16 silly addNameRange { name: 'grunt-contrib-cssmain', range: '*', hasData: false }
+17 verbose mapToRegistry name grunt-contrib-cssmain
+18 verbose mapToRegistry uri https://registry.npmjs.org/grunt-contrib-cssmain
+19 verbose request on initialization, where is /grunt-contrib-cssmain
+20 verbose request after pass 1, where is /grunt-contrib-cssmain
+21 verbose request url raw /grunt-contrib-cssmain
+22 verbose request resolving registry [ 'https://registry.npmjs.org/', './grunt-contrib-cssmain' ]
+23 verbose request after pass 2, where is https://registry.npmjs.org/grunt-contrib-cssmain
+24 verbose request no auth needed
+25 info attempt registry request try #1 at 14:13:00
+26 verbose request id 69fe5a30048ac136
+27 http request GET https://registry.npmjs.org/grunt-contrib-cssmain
+28 http 404 https://registry.npmjs.org/grunt-contrib-cssmain
+29 verbose headers { date: 'Tue, 14 Oct 2014 06:13:01 GMT',
+29 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+29 verbose headers   'content-type': 'application/json',
+29 verbose headers   'cache-control': 'max-age=0',
+29 verbose headers   'content-length': '52',
+29 verbose headers   'accept-ranges': 'bytes',
+29 verbose headers   via: '1.1 varnish',
+29 verbose headers   age: '0',
+29 verbose headers   'x-served-by': 'cache-hk90-HKG',
+29 verbose headers   'x-cache': 'MISS',
+29 verbose headers   'x-cache-hits': '0',
+29 verbose headers   'x-timer': 'S1413267180.658426,VS0,VE921',
+29 verbose headers   'keep-alive': 'timeout=10, max=50',
+29 verbose headers   connection: 'Keep-Alive' }
+30 silly registry.get cb [ 404,
+30 silly registry.get   { date: 'Tue, 14 Oct 2014 06:13:01 GMT',
+30 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+30 silly registry.get     'content-type': 'application/json',
+30 silly registry.get     'cache-control': 'max-age=0',
+30 silly registry.get     'content-length': '52',
+30 silly registry.get     'accept-ranges': 'bytes',
+30 silly registry.get     via: '1.1 varnish',
+30 silly registry.get     age: '0',
+30 silly registry.get     'x-served-by': 'cache-hk90-HKG',
+30 silly registry.get     'x-cache': 'MISS',
+30 silly registry.get     'x-cache-hits': '0',
+30 silly registry.get     'x-timer': 'S1413267180.658426,VS0,VE921',
+30 silly registry.get     'keep-alive': 'timeout=10, max=50',
+30 silly registry.get     connection: 'Keep-Alive' } ]
+31 silly lockFile 1cb9a301-grunt-contrib-cssmain grunt-contrib-cssmain@*
+32 silly lockFile 1cb9a301-grunt-contrib-cssmain grunt-contrib-cssmain@*
+33 verbose stack Error: 404 Not Found: grunt-contrib-cssmain
+33 verbose stack     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:259:14)
+33 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:198:65)
+33 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:236:22)
+33 verbose stack     at Request.emit (events.js:98:17)
+33 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1142:14)
+33 verbose stack     at Request.emit (events.js:117:20)
+33 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1096:12)
+33 verbose stack     at IncomingMessage.emit (events.js:117:20)
+33 verbose stack     at _stream_readable.js:943:16
+33 verbose stack     at process._tickCallback (node.js:419:13)
+34 verbose statusCode 404
+35 verbose pkgid grunt-contrib-cssmain
+36 verbose cwd /Users/hzchen/Documents/WORK/test/ng/web
+37 error Darwin 13.4.0
+38 error argv "node" "/usr/local/bin/npm" "install" "grunt-contrib-cssmain" "--save-dev"
+39 error node v0.10.32
+40 error npm  v2.0.0
+41 error code E404
+42 error 404 Not Found: grunt-contrib-cssmain
+42 error 404
+42 error 404 'grunt-contrib-cssmain' is not in the npm registry.
+42 error 404 You should bug the author to publish it (or use the name yourself!)
+42 error 404 It was specified as a dependency of 'library'
+42 error 404
+42 error 404 Note that you can also install from a
+42 error 404 tarball, folder, http url, or git url.
+43 verbose exit [ 1, true ]
