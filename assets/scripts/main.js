@@ -3,8 +3,7 @@ require.config({
     paths: {
 		"jquery": "/bower_components/jquery/dist/jquery.min",
 		"angular" : "/bower_components/angularjs/angular",
-		"ngRoute": "/bower_components/angular-route/angular-route",
-		"app": "app"
+		"ngRoute": "/bower_components/angular-route/angular-route"
 	},
 	shim:{
         "angular": {

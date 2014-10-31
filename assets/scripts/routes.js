@@ -1,6 +1,6 @@
-define(['app'], function (app) {
+define(['app','controllers/rootController'], function (app) {
 	'use strict';
-	//var app = angular.module('myApp', ["ngRoute"]);
+
 	return app.config(['$routeProvider','$locationProvider', function ($routeProvider,$locationProvider) {
 	    $routeProvider.when('/home',
         {
