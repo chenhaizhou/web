@@ -1,5 +1,7 @@
-define(['jquery'],function($){
-	$(function(){
-		$('body').append('<h2>TTTTTTT</h2>');
-	});
-});
+function reverse(name){
+	return name.split("").reverse().join("");
+}
+
+function sumFun(a,b){
+	return a + b;
+}
