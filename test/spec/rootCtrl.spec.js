@@ -1,5 +1,5 @@
 define(['app',
-	'services/services',
+		'services/services',
 		'services/userService'
 	],function(){
 		'use strict';
