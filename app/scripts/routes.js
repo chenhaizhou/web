@@ -4,7 +4,7 @@ define(['app','controllers/rootController'], function (app) {
 	return app.config(['$routeProvider','$locationProvider', function ($routeProvider,$locationProvider) {
 	    $routeProvider.when('/home',
         {
-          templateUrl: '/assets/partials/home.html',
+          templateUrl: '/app/partials/home.html',
           controller: 'RootCtrl'
         })
       .otherwise(

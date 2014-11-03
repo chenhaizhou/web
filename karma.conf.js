@@ -15,15 +15,18 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test-main.js',
+      
+      {pattern: 'bower_components/angularjs/angular.js', included: false},
+      {pattern: 'bower_components/angular-route/angular-route.js', included: false},
       {pattern: 'assets/scripts/**/*.js', included: false},
-      {pattern: 'tests/spec/*.spec.js', included: false}
+      {pattern: 'tests/spec/*.spec.js', included: false},
+      'tests/test-main.js'
     ],
 
 
     // list of files to exclude
     exclude: [
-      'assets/scripts/main.js'
+      'app/scripts/main.js'
     ],
 
 
