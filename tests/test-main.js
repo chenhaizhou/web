@@ -14,7 +14,7 @@ Object.keys(window.__karma__.files).forEach(function(file) {
 
 require.config({
   // Karma serves files under /base, which is the basePath from your config file
-  baseUrl: 'assets/scripts',
+  baseUrl: 'app/scripts',
   paths: {
     "jquery": "../../bower_components/jquery/dist/jquery.min",
     "angular" : "../../bower_components/angularjs/angular",

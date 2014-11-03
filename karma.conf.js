@@ -18,8 +18,8 @@ module.exports = function(config) {
       
       {pattern: 'bower_components/angularjs/angular.js', included: false},
       {pattern: 'bower_components/angular-route/angular-route.js', included: false},
-      {pattern: 'assets/scripts/**/*.js', included: false},
-      {pattern: 'tests/spec/*.spec.js', included: false},
+      {pattern: 'app/scripts/**/*.js', included: false},
+      {pattern: 'tests/**/*.js', included: false},
       'tests/test-main.js'
     ],
 

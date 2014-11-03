@@ -1,4 +1,4 @@
-define(['assets/scripts/app/t1'],function(){
+define(['app/scripts/app/t1'],function(){
 	'use strict';
 	describe("A suite of basic functions",function(){
 		it("reverse word",function(){

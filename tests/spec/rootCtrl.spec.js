@@ -1,6 +1,6 @@
 define(['app',
-	'assets/scripts/services/services',
-		'assets/scripts/services/userService'
+	'services/services',
+		'services/userService'
 	],function(){
 		'use strict';
 
