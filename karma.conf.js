@@ -15,7 +15,11 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      //{pattern: 'bower_components/**/*.js', included: false},
+      {pattern: 'bower_components/jquery/dist/jquery.min.js', included: false},
+      {pattern: 'bower_components/angularjs/angular.js', included: false},
+      {pattern: 'bower_components/angular-route/angular-route.js', included: false},
+      {pattern: 'bower_components/angular-mocks/angular-mocks.js', included: false},
+      {pattern: 'app/scripts/*.js', included: false},
       {pattern: 'app/scripts/**/*.js', included: false},
       {pattern: 'test/**/*.spec.js', included: false},
       'test/test-main.js'
@@ -24,7 +28,8 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      'app/scripts/main.js'
+      'app/scripts/main.js',
+      'bower_components/jasmine/**/*.js'
     ],
 
 
@@ -42,6 +47,12 @@ module.exports = function(config) {
 
     // web server port
     port: 9876,
+
+    /*plugins: [
+        'karma-requirejs',
+        'karma-jasmine',
+        'karma-chrome-launcher'
+    ],*/
 
 
     // enable / disable colors in the output (reporters and logs)

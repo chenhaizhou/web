@@ -1,12 +1,17 @@
-define(['app/scripts/app/t1'],function(){
+define(['common/t1'],function(t1){
 	'use strict';
+
 	describe("A suite of basic functions",function(){
 		it("reverse word",function(){
-			expect("DCBA").toEqual(reverse("ABCD"));
+			expect("DCBA").toEqual(t1.reverse("ABCD"));
 		});
 
 		it('sum',function(){
-			expect(2).toEqual(sumFun(1,1));
+			expect(2).toEqual(t1.sumFun(1,1));
+		});
+
+		it('true',function(){
+			expect(true).toEqual(true);
 		});
 
 	});

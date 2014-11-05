@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 
 		pkg: grunt.file.readJSON('package.json'),
 		jshint: {
-	      files: ['Gruntfile.js', 'assets/scripts/**/*.js', 'spec/**/*.js'],
+	      files: ['Gruntfile.js', 'app/scripts/**/*.js', 'test/**/*.js'],
 	      options: {
 	        //这里是覆盖JSHint默认配置的选项
 	        globals: {
@@ -21,15 +21,29 @@ module.exports = function(grunt) {
 		  },
 		  dist: {
 		    // 将要被合并的文件
-		    src: ['assets/scripts/**/*.js'],
+		    src: ['app/scripts/**/*.js'],
 		    // 合并后的JS文件的存放位置
-		    dest: 'assets/<%= pkg.name %>.min.js'
+		    dest: 'app/<%= pkg.name %>.min.js'
 		  }
-		}
+		},
+		karma: {
+
+            unit: {
+
+                configFile: "karma.conf.js",
+
+                singleRun: true
+
+            }
+
+        }
 		
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('karma');
+
+	grunt.registerTask('test', ['jshint','karma']);
 
 	grunt.registerTask('default', ['jshint']);
 
