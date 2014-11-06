@@ -10,6 +10,16 @@ module.exports = function(grunt) {
 				jshintrc: '.jshintrc'
 			}
 		},
+		copy: {
+		  main: {
+		    expand: true,
+		    cwd: 'bower_components/bootstrap/dist/fonts/',
+		    src: '**',
+		    dest: 'app/dist/fonts/',
+		    flatten: true,
+		    filter: 'isFile'
+		  }
+		},
 		sass: {
 			options: {                       // Target options
 		        style: 'expanded'
@@ -72,10 +82,18 @@ module.exports = function(grunt) {
 
 			}
 
+		},
+		watch: {
+			sass: {
+				files: 'app/src/sass/*.scss',
+				tasks: ['css','concat:css','cssmin']
+			}
+
 		}
 
 	});
-
+	
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	//grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-concat');
@@ -83,6 +101,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-karma');
 	grunt.loadNpmTasks('karma-chrome-launcher');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	
 	grunt.registerTask('test', ['jshint','karma']);
@@ -92,6 +111,6 @@ module.exports = function(grunt) {
 
 
 
-	grunt.registerTask('default', ['jshint','concat:css','cssmin']);
+	grunt.registerTask('default', ['jshint','copy','css','concat:css','cssmin']);
 
 };
