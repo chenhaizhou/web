@@ -1,21 +1,19 @@
-define(['app','ngMock','controllers/rootController'],function(){
-	
-    describe('RootCtrl',function(){
+define(['app','ngMock','controllers/rootController'],function(controllers){
+	'use strict';
+    xdescribe('RootCtrl test',function(){
 
     	var scope, controller;
 
     	beforeEach(module('controllers'));
  
-	    beforeEach(inject(function ($controller, $rootScope) {
+	    beforeEach(inject(function(_$controller_, _$rootScope_) {
 
-	        controller = $controller;
-	        scope = $rootScope.$new();
+	        controller = _$controller_;
+	        scope = _$rootScope_.$new();
 
 	        controller('RootCtrl', {
 	            $scope: scope
 	        });
-
-	    	console.log(scope.name);
 
 	    }));
 

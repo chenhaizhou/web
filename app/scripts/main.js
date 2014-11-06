@@ -1,4 +1,5 @@
 require.config({
+
     baseUrl: "app/scripts",
     paths: {
 		"jquery": "../../bower_components/jquery/dist/jquery.min",
@@ -23,6 +24,7 @@ require([
 	'app',
 	'routes'
 	], function(angular, app, routes) {
+		'use strict';
 		angular.element(document).ready(function() {
 			angular.bootstrap(document,['app']);
 		});

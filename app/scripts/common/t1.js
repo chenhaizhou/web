@@ -1,5 +1,5 @@
 define(function(){
-
+	'use strict';
 	return {
 		reverse: function (name){
 			return name.split("").reverse().join("");
@@ -7,6 +7,6 @@ define(function(){
 		sumFun: function (a,b){
 			return a + b;
 		}
-	}
+	};
 
 });

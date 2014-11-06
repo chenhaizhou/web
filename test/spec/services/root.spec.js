@@ -1,5 +1,5 @@
 define(['ngMock', 'services/userService'],function(){
-
+    'use strict';
     describe('User Service', function () {
         var service;
 
