@@ -19,8 +19,8 @@ module.exports = function(config) {
       {pattern: 'bower_components/angularjs/angular.js', included: false},
       {pattern: 'bower_components/angular-route/angular-route.js', included: false},
       {pattern: 'bower_components/angular-mocks/angular-mocks.js', included: false},
-      {pattern: 'app/scripts/*.js', included: false},
-      {pattern: 'app/scripts/**/*.js', included: false},
+      {pattern: 'app/src/scripts/*.js', included: false},
+      {pattern: 'app/src/scripts/**/*.js', included: false},
       {pattern: 'test/**/*.spec.js', included: false},
       'test/test-main.js'
     ],
@@ -28,7 +28,7 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      'app/scripts/main.js',
+      'app/src/scripts/main.js',
       'bower_components/jasmine/**/*.js'
     ],
 
