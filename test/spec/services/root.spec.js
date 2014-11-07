@@ -8,7 +8,7 @@ define(['ngMock', 'services/userService'],function(){
         beforeEach(inject(function (UserService) {
             service = UserService;
         }));
-
+        
         it('should get success result', function () {          
             expect(service.getUser()).not.toBeNull();
         });

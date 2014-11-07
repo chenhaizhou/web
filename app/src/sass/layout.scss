@@ -1,5 +1,39 @@
+ul,li {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
 body {
 	padding-top: 50px;
 }
 
 @import "header";
+
+.box {
+	margin:0 0;
+	padding:5px 0;
+	background-color:#f3f3f3;
+	border-radius:5px;
+	h4 {
+		padding:0 10px;
+		margin:0;
+	}
+	li {
+		margin:10px;
+		background-color: $white;
+		border-radius: 5px;
+		padding:5px;
+	}
+}
+
+.dashboard {
+	margin-top:15px;
+}
+
+section {
+	position:absolute;
+	top:50px;
+	bottom:0;
+	left:0;
+	right:0;
+}

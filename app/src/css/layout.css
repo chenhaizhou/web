@@ -1,3 +1,9 @@
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 body {
   padding-top: 50px;
 }
@@ -5,6 +11,73 @@ body {
 .pro {
   color: #cccccc;
   line-height: 50px;
+  margin-right: 10px;
+}
+.pro-box {
+  position: absolute;
+  width: 140px;
+  right: 10px;
+  padding: 5px 5px;
+  top: 52px;
+  background-color: #fff;
+  box-shadow: 0 0 3px #ccc;
+  border-radius: 5px;
+}
+.pro-box::after {
+  content: '';
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  right: 10px;
+  top: -10px;
+}
+.pro-box li {
+  line-height: 30px;
+}
+.pro-box a {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  color: #666;
+  padding: 0 15px;
+  border-radius: 5px;
+}
+.pro-box a:hover {
+  text-decoration: none;
+  background-color: #e6e6e6;
+}
+.pro-box .glyphicon {
+  margin-right: 10px;
+}
+
+.box {
+  margin: 0 0;
+  padding: 5px 0;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+}
+.box h4 {
+  padding: 0 10px;
+  margin: 0;
+}
+.box li {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.dashboard {
+  margin-top: 15px;
+}
+
+section {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 /*# sourceMappingURL=layout.css.map */

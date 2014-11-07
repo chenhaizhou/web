@@ -21,10 +21,17 @@
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse">
 				<div class="navbar-right pro">
-					<span class="glyphicon glyphicon-user"></span>
+					<span class="glyphicon glyphicon-user" ng-click="pro = !pro"></span>
+					<div ng-show="pro" class="pro-box">
+						<ul>
+							<li><a href=""><span class="glyphicon glyphicon-th-large"></span>Pro</a></li>
+							<li><a href=""><span class="glyphicon glyphicon-cog"></span>Setting</a></li>
+							<li><a href=""><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
+						</ul>
+					</div>
 				</div>
 	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="#">Dashboard</a></li>
+	            <li><a href="#/list">Dashboard</a></li>
 	            <li><a href="#">Settings</a></li>
 	            <li><a href="#">Profile</a></li>
 	            <li><a href="#">Help</a></li>

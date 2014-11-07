@@ -1,25 +1,26 @@
-define(['app','ngMock','controllers/rootController'],function(controllers){
+define(['app','ngMock','controllers/rootController'],function (controllers){
 	'use strict';
-    xdescribe('RootCtrl test',function(){
+    describe('RootCtrl test',function(){
 
     	var scope, controller;
 
-    	beforeEach(module('controllers'));
+    	beforeEach(module('app'));
  
-	    beforeEach(inject(function(_$controller_, _$rootScope_) {
+	    beforeEach(inject(function ($controller, $rootScope) {
 
-	        controller = _$controller_;
-	        scope = _$rootScope_.$new();
-
-	        controller('RootCtrl', {
+			scope = $rootScope.$new();
+	        controller = $controller('rootController', {
 	            $scope: scope
 	        });
 
 	    }));
 
-    	it('name is null?',function(){
-    		
-    		expect(scope.name).toBeUndefined();
+    	it('should have name set',function(){   		
+    		expect(scope.name).toBeDefined();
+    	});
+
+    	it('should have name is not null',function(){   		
+    		expect(scope.name).not.toBeNull();
     	});
 
     });

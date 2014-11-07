@@ -1,28 +1,27 @@
-define(['app','routes'],function(){
+define(['app','ngMock','routes'],function (app){
 	'use strict';
-	xdescribe('Routes tests',function(){
+	describe('Routes tests',function(){
 
 		beforeEach(module('app'));
 		var localtion, route, rootScope;
 
-		beforeEach(inject(function(_$rootScope_,_$localtion_,_$route_){
-			localtion = _$localtion_;
+		beforeEach(inject(function (_$location_, _$route_, _$rootScope_){
+			location = _$location_;
 			route = _$route_;
-			rootScope =_$rootScope_;
+			rootScope = _$rootScope_;
 		}));
 
-		
-
+	
 		describe('index route',function(){
 
-			beforeEach(inject(function($httpBackend){
-				$httpBackend.expectGET('partials/home.html').respond(200,'main HTML');
+			beforeEach(inject(function ($httpBackend){
+				$httpBackend.expectGET('views/home.html').respond(200,'main HTML');
 			}));
 
-			it('home',function(){
-				localtion.path('/');
+			it('should load home',function(){
+				location.path('/home');
 				rootScope.$digest();
-				expect(route.current.controller).toBe('RootCtrl');
+				expect(route.current.controller).toBe('rootController');
 			});
 		});
 
