@@ -1,7 +1,7 @@
-define(['app','controllers/rootController','controllers/listController'], function (app) {
+define(['angular','ngRoute','controllers/rootController','controllers/listController'], function (angular) {
 	'use strict';
-
-	return app.config(['$routeProvider','$locationProvider', function ($routeProvider,$locationProvider) {
+	angular.module('routes',['ngRoute'])
+  .config(['$routeProvider','$locationProvider', function ($routeProvider,$locationProvider) {
 	    $routeProvider.when('/home',
         {
           templateUrl: '/app/views/home.html',

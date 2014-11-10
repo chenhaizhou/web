@@ -1,5 +1,5 @@
 define(['angular',
-	'ngRoute',
+	'routes',
 	'controllers/controllers',
 	'services/services', 
 	'filters/filters',
@@ -11,5 +11,5 @@ define(['angular',
 			'services',
 			'filters', 
 			'directives',
-			'ngRoute']);
+			'routes']);
 	});

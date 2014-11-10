@@ -96,6 +96,12 @@ body {
 .box li:hover {
   background-color: #fafafa;
 }
+.box textarea {
+  border-width: 0;
+  width: 100%;
+  background-color: #fff;
+  resize: none;
+}
 
 .dashboard {
   margin-top: 15px;

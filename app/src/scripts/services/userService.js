@@ -1,4 +1,4 @@
-define(['services/services'],
+define(['./services'],
   function(services) {
     'use strict';
     services.factory('UserService', [

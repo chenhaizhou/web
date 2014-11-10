@@ -1,4 +1,4 @@
-define(['app','services/userService'],
+define(['./controllers','services/userService'],
   function (controllers) {
   	'use strict';
     controllers.controller('rootController', ['$scope', 'UserService',

@@ -1,4 +1,4 @@
-<div class="container-fluid dashboard">
+<div class="container-fluid dashboard" id="aaa">
 	<div class="col-lg-3" ng-repeat=" list in listName">
 		<div class="box">
 			<h4>{{ list }}</h4>
@@ -8,6 +8,7 @@
 			<ul>
 				<li ng-repeat="item in listObj" class="{{ item.type }}" ng-mouseenter="showEdit = true" ng-mouseleave="showEdit = false">
 					<a href="" class="title">{{ item.title }}</a>
+					<textarea ng-if="!item.title"></textarea>
 					<div class="edit" ng-show="showEdit">
 						<span class="glyphicon glyphicon-pencil"></span>
 					</div>
@@ -33,7 +34,7 @@
 			<span class="glyphicon glyphicon-remove" ng-click="close()"></span>
 		</div>
 		<ul>
-			<li><a href="">Add Card...</a></li>
+			<li><a href="javascript:;" ng-click="addCard(index)">Add Card...</a></li>
 			<li><a href="">Copy List...</a></li>
 			<li><a href="">Move Card...</a></li>			
 		</ul>

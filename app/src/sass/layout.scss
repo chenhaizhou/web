@@ -54,6 +54,12 @@ body {
 			background-color: lighten($black, 98%);
 		}
 	}
+	textarea {
+		border-width:0;
+		width: 100%;
+		background-color: $white;
+		resize: none;
+	}
 }
 
 .dashboard {
