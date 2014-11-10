@@ -56,28 +56,171 @@ body {
   padding: 5px 0;
   background-color: #f3f3f3;
   border-radius: 5px;
+  position: relative;
 }
 .box h4 {
-  padding: 0 10px;
+  padding: 5px 10px;
   margin: 0;
+  font-size: 14px;
+}
+.box .menu {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.box .menu span {
+  font-size: 14px;
+  color: #999999;
+  cursor: pointer;
+}
+.box ul {
+  /* position: absolute;
+  left:0;
+  right:0;
+  top:30px;
+  bottom:20px; */
 }
 .box li {
   margin: 10px;
+  margin-top: 0;
+  position: relative;
   background-color: #fff;
   border-radius: 5px;
   padding: 5px;
+  overflow: hidden;
+  border-width: 0 0 0 3px;
+  border-style: solid;
+  border-color: #fff;
+  box-shadow: 0 1px 1px #cccccc;
+}
+.box li:hover {
+  background-color: #fafafa;
 }
 
 .dashboard {
   margin-top: 15px;
+  /* 	height: 100%;
+  	.col-lg-3 {
+  		height: 100%;
+  	} */
 }
 
 section {
   position: absolute;
   top: 50px;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   right: 0;
+}
+
+.list-card-member {
+  float: right;
+  bottom: 10px;
+  right: 10px;
+}
+.list-card-member span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  text-align: center;
+  line-height: 30px;
+  background-color: #e6e6e6;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.glyphicon {
+  color: #cccccc;
+  font-size: 12px;
+}
+.glyphicon:hover {
+  color: #666666 !important;
+}
+
+.edit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.edit span {
+  cursor: pointer;
+}
+
+.date {
+  font-size: 12px;
+  color: #999999;
+}
+.date i {
+  margin-right: 5px;
+}
+
+a.title {
+  display: block;
+  margin-right: 30px;
+  color: #4d4d4d;
+  font-size: 14px;
+  padding: 5px 0;
+  line-height: 120%;
+}
+
+.task {
+  border-color: #5cb85c !important;
+}
+
+.story {
+  border-color: #5bc0de !important;
+}
+
+.bug {
+  border-color: #d9534f !important;
+}
+
+.wran {
+  border-color: #f0ad4e !important;
+}
+
+.menu-box {
+  position: absolute;
+  width: 240px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px #cccccc;
+  background-color: #fff;
+}
+.menu-box h5 {
+  text-align: center;
+  font-weight: normal;
+  margin: 0;
+  padding: 0 10px 10px;
+  border-bottom: 1px solid #d9d9d9;
+  color: #999999;
+}
+.menu-box ul {
+  padding: 5px 0;
+}
+.menu-box li {
+  font-weight: bold;
+  font-size: 16px;
+}
+.menu-box li a {
+  display: block;
+  padding: 5px 10px;
+  color: #4d4d4d;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.menu-box li a:hover {
+  background-color: #f2f2f2;
+}
+.menu-box .close-btn {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 8px;
+  right: 10px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=layout.css.map */

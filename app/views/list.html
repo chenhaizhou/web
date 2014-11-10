@@ -2,9 +2,21 @@
 	<div class="col-lg-3" ng-repeat=" list in listName">
 		<div class="box">
 			<h4>{{ list }}</h4>
+			<div class="menu">
+				<span class="glyphicon glyphicon-download" ng-click="showMenu($event)"></span>
+			</div>
 			<ul>
-				<li>
-					1
+				<li ng-repeat="item in listObj" class="{{ item.type }}" ng-mouseenter="showEdit = true" ng-mouseleave="showEdit = false">
+					<a href="" class="title">{{ item.title }}</a>
+					<div class="edit" ng-show="showEdit">
+						<span class="glyphicon glyphicon-pencil"></span>
+					</div>
+					<div class="date">
+						<i class="glyphicon glyphicon-time"></i>{{ item.date }}
+					</div>
+					<div class="list-card-member">
+						<span ng-repeat="m in item.member">{{ m }}</span>
+					</div>
 				</li>
 				<li>
 					2
@@ -14,5 +26,16 @@
 				</li>
 			</ul>
 		</div>
+	</div>
+	<div ng-show="menuBox" class="menu-box" style="top:{{ menuBoxTop }}px;left:{{ menuBoxLeft }}px">
+		<h5>List Action</h5>
+		<div class="close-btn">
+			<span class="glyphicon glyphicon-remove" ng-click="close()"></span>
+		</div>
+		<ul>
+			<li><a href="">Add Card...</a></li>
+			<li><a href="">Copy List...</a></li>
+			<li><a href="">Move Card...</a></li>			
+		</ul>
 	</div>
 </div>
