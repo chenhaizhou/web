@@ -1,8 +1,7 @@
-define(['./controllers','services/userService'],
-  function (controllers) {
+define(function () {
   	'use strict';
-    controllers.controller('rootController', ['$scope', 'UserService',
-      function($scope, UserService) {
+
+    return function($scope, UserService) {
         $scope.name = UserService.getUser();
-    }]);
+    };
 });

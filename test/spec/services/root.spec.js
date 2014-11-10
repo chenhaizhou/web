@@ -1,15 +1,13 @@
-define(['ngMock', 'services/userService'],function(){
+define(['services/userService'],function(userService){
     'use strict';
     describe('User Service', function () {
         var service;
 
-        beforeEach(module('services'));
-
-        beforeEach(inject(function (UserService) {
-            service = UserService;
-        }));
+        beforeEach(function () {
+            service = userService();
+        });
         
-        it('should get success result', function () {          
+        it('should get success result', function () {   
             expect(service.getUser()).not.toBeNull();
         });
 	});

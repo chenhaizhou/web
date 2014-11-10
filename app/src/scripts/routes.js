@@ -1,4 +1,4 @@
-define(['angular','ngRoute','controllers/rootController','controllers/listController'], function (angular) {
+define(['angular','ngRoute'], function (angular) {
 	'use strict';
 	angular.module('routes',['ngRoute'])
   .config(['$routeProvider','$locationProvider', function ($routeProvider,$locationProvider) {

@@ -1,4 +1,4 @@
-define(['app','ngMock','routes'],function (app){
+define(['ngMock','routes'],function (){
 	'use strict';
 	describe('Routes tests',function(){
 
@@ -17,8 +17,7 @@ define(['app','ngMock','routes'],function (app){
 
 			
 			it('url',function(){
-				console.log(route.routes['/home'].controller,'rootController');
-				 expect(route.routes['/home'].controller).toEqual('rootController');
+				expect(route.routes['/home'].controller).toEqual('rootController');
     			expect(route.routes['/home'].templateUrl).toEqual('/app/views/home.html');
 
 			});

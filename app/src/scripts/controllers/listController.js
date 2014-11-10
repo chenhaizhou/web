@@ -1,6 +1,7 @@
-define(['./controllers','jquery'],function (controllers, $){
+define(['jquery'],function ($){
 	'use strict';
-	controllers.controller('listController',['$scope', function ($scope){
+
+	return function ($scope){
 		$scope.listName = ['To Do','Doing','Q&A','Done'];
 
 		$scope.listObj = [
@@ -60,5 +61,5 @@ define(['./controllers','jquery'],function (controllers, $){
 			console.log(index);
 		};
 
-	}]);
+	};
 });

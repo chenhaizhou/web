@@ -1,12 +1,11 @@
-define(['./services'],
-  function(services) {
+define(
+  function() {
     'use strict';
-    services.factory('UserService', [
-      function() {
+    return function() {
         return {
           getUser: function() {
             return 'testUser';
           }
         };
-      }]);
+      };
   });
