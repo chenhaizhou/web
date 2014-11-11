@@ -1,40 +1,11 @@
 define(['jquery'],function ($){
 	'use strict';
 
-	return function ($scope){
-		$scope.listName = ['To Do','Doing','Q&A','Done'];
-
-		$scope.listObj = [
-		{},
-			{
-				type: 'story',
-				member: ['HZ','LL'],
-				title: 'add html page relatade create',
-				date: '2014-11-07'
-
-			},
-			{
-				type: 'task',
-				member: ['C'],
-				title: 'delete html page relatade create',
-				date: '2014-11-07'
-
-			},
-			{
-				type: 'bug',
-				member: ['SH'],
-				title: 'update html page relatade create',
-				date: '2014-11-07'
-
-			},
-			{
-				type: 'wran',
-				member: ['XA','BS','Q'],
-				title: 'change html page relatade create',
-				date: '2014-11-07'
-
-			}
-		];
+	return function ($scope, listService){
+		
+		listService.getList().then(function (data) {
+			$scope.list = data;
+		});
 
 		$scope.showMenu = function(e){
 			var el = $(e.target).offset(), 
@@ -48,7 +19,7 @@ define(['jquery'],function ($){
 
 			l = menuWidth + el.left >= winWidth ? winWidth - menuWidth : el.left;
 
-			console.log(angular.element(document.querySelector('#aaa')));
+			//console.log(angular.element(document.querySelector('#aaa')));
 
 			$scope.menuBoxLeft = l;
 		};
@@ -58,7 +29,27 @@ define(['jquery'],function ($){
 		};
 
 		$scope.addCard = function(index){
-			console.log(index);
+			$scope.list[index].data.unshift({});
+			$scope.close();
+		};
+
+		$scope.saveCard = function(index,cardTitle){
+			$scope.list[index].data[0] = {
+				'title': cardTitle
+			};
+		};
+
+		$scope.cancelCard = function(index){
+			$scope.list[index].data.shift();
+		};
+
+		$scope.editCard = function(e,index,cardTitle){
+			var w = $('.container-fluid .col-lg-3').width(),el = $(e.target).offset();
+			$scope.modal = true;
+			$scope.cardEditTitle = cardTitle;
+			$scope.shadeTop = el.top - 15;
+			$scope.shadeLeft = el.left - w + 32;
+			$scope.shadeWidth = w;
 		};
 
 	};

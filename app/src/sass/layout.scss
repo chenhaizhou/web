@@ -4,7 +4,7 @@ ul,li {
 	list-style:none;
 }
 body {
-	padding-top: 50px;
+	//padding-top: 50px;
 }
 
 @import "header";
@@ -12,10 +12,10 @@ body {
 .box {
 	margin:0 0;
 	padding:5px 0;
-	background-color:#f3f3f3;
+	background-color: lighten($black, 94%);
 	border-radius:5px;
 	position:relative;
-	//max-height:100%;
+	max-height:100%;
 	h4 {
 		padding:5px 10px;
 		margin:0;
@@ -37,6 +37,7 @@ body {
 		right:0;
 		top:30px;
 		bottom:20px; */
+		overflow:auto;
 	}
 	li {
 		margin:10px;
@@ -53,13 +54,32 @@ body {
 		&:hover {
 			background-color: lighten($black, 98%);
 		}
+		&.add-status {
+			background-color: lighten($black, 94%);
+			box-shadow: none;
+			border-left-color: lighten($black, 94%);
+			textarea {
+				background-color: $white;
+				border-radius: 5px;
+				margin-bottom: 5px;
+			}
+		}
+		.cancel {
+			margin-left: 10px;
+			vertical-align: middle;
+			font-size:16px;
+			color: lighten($black, 60%);
+			cursor: pointer;
+		}
 	}
-	textarea {
-		border-width:0;
-		width: 100%;
-		background-color: $white;
-		resize: none;
-	}
+}
+
+textarea {
+	border-width:0;
+	padding: 5px;
+	width: 100%;
+	background-color: $white;
+	resize: none;
 }
 
 .dashboard {
@@ -185,5 +205,59 @@ a.title {
 		top: 8px;
 		right: 10px;
 		cursor: pointer;
+	}
+}
+.shade {
+	position: fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index: 1031;
+	&-bg {
+		width:100%;
+		height:100%;
+		background-color: $black;
+		opacity: .7;
+	}
+	.card-form {
+		position: absolute;
+		padding:0 10px;
+		z-index: 2;
+		height:200px;
+		textarea {
+			margin-bottom:5px;
+			border-radius: 5px;
+			padding:5px;
+			height:auto;
+			min-height: 80px;
+
+		}
+		input[type=button] {
+			margin-right:10px;
+		}
+		.menu {
+			position: absolute;
+			left:310px;
+			top:0;
+			li {
+				margin:5px 0 10px;
+				a {
+					padding:5px 10px;
+					border-radius: 5px;
+					background:rgba(0,0,0,.6);
+					color: darken($white, 30%);
+					white-space: nowrap;
+					text-decoration: none;
+					&:hover {
+						margin-left:5px;
+						background-color: rgba(0,0,0,.8);
+					}
+					span {
+						margin-right:10px;
+					}
+				}
+			}
+		}
 	}
 }

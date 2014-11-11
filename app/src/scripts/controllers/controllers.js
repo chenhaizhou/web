@@ -6,6 +6,6 @@ define(['angular',
   'use strict';
   return angular
   			.module('controllers', [])
-  			.controller('listController',['$scope', listController])
+  			.controller('listController',['$scope', 'ListService', listController])
 			.controller('rootController', ['$scope', 'UserService', rootController]);
 });

@@ -1,27 +1,28 @@
-define(['app','ngMock','controllers/rootController'],function (controllers){
+define(['controllers/rootController'],function (rootController){
 	'use strict';
     describe('RootCtrl test',function(){
 
-    	var scope, controller;
-
-    	beforeEach(module('app'));
+    	var scope, UserService, t1;
  
-	    beforeEach(inject(function ($controller, $rootScope) {
+	    beforeEach(function(){
+            scope = {};
+            UserService = {
+                getUser: function(){
+                    return 'testUser1';
+                }
+            };
+        });
 
-			scope = $rootScope.$new();
-	        controller = $controller('rootController', {
-	            $scope: scope
-	        });
 
-	    }));
+        it('should have name when init controller',function(){           
+            rootController(scope, UserService);
+            expect(scope.name).toEqual('testUser1');
+        });
 
-    	it('should have name set',function(){   		
-    		expect(scope.name).toBeDefined();
-    	});
-
-    	it('should have name is not null',function(){   		
-    		expect(scope.name).not.toBeNull();
-    	});
+        it('should have name when init controller',function(){           
+            rootController(scope, UserService);
+            expect(scope.result).toEqual(2);
+        });
 
     });
 

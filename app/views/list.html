@@ -1,31 +1,29 @@
-<div class="container-fluid dashboard" id="aaa">
-	<div class="col-lg-3" ng-repeat=" list in listName">
+<div class="container-fluid dashboard">
+	<div class="col-lg-3" ng-repeat=" obj in list">
 		<div class="box">
-			<h4>{{ list }}</h4>
+			<h4>{{ obj.name }}</h4>
 			<div class="menu">
 				<span class="glyphicon glyphicon-download" ng-click="showMenu($event)"></span>
 			</div>
 			<ul>
-				<li ng-repeat="item in listObj" class="{{ item.type }}" ng-mouseenter="showEdit = true" ng-mouseleave="showEdit = false">
-					<a href="" class="title">{{ item.title }}</a>
-					<textarea ng-if="!item.title"></textarea>
+				<li ng-repeat="card in obj.data" class="{{ card.type }}" ng-class="{'add-status':!card.title}" ng-mouseenter="showEdit = card.title" ng-mouseleave="showEdit = false">
+					<a href="" class="title" ng-if="card.title">{{ card.title }}</a>
+					<div ng-if="!card.title" >
+						<textarea ng-model="cardTitle"></textarea>
+						<input type="button" class="btn btn-success" value="Save" ng-click="saveCard(index,cardTitle)">
+						<span class="glyphicon glyphicon-remove cancel" ng-click="cancelCard(index)"></span>
+					</div>
 					<div class="edit" ng-show="showEdit">
-						<span class="glyphicon glyphicon-pencil"></span>
+						<span class="glyphicon glyphicon-pencil" ng-click="editCard($event,index,card.title)"></span>
 					</div>
-					<div class="date">
-						<i class="glyphicon glyphicon-time"></i>{{ item.date }}
+					<div class="date" ng-if="card.date">
+						<i class="glyphicon glyphicon-time"></i>{{ card.date }}
 					</div>
-					<div class="list-card-member">
-						<span ng-repeat="m in item.member">{{ m }}</span>
+					<div class="list-card-member" ng-if="card.member">
+						<span ng-repeat="m in card.member">{{ m }}</span>
 					</div>
 				</li>
-				<li>
-					2
-				</li>
-				<li>
-					3
-				</li>
-			</ul>
+			</ul>     
 		</div>
 	</div>
 	<div ng-show="menuBox" class="menu-box" style="top:{{ menuBoxTop }}px;left:{{ menuBoxLeft }}px">
@@ -40,3 +38,29 @@
 		</ul>
 	</div>
 </div>
+ <div class="shade" ng-show="modal">
+ 	<div class="shade-bg"></div>
+ 	<div class="card-form" style="width:{{ shadeWidth }}px;left:{{ shadeLeft }}px;top:{{ shadeTop }}px;">
+ 		<textarea ng-model="cardEditTitle">{{ cardEditTitle }}</textarea>
+ 		<input type="button" class="btn btn-success" value="Save" ng-click="saveEditCard(index,cardEditTitle)">
+		<span class="glyphicon glyphicon-remove cancel" ng-click="modal=false"></span>
+
+		 <ul class="menu">
+		 	<li>
+		 		<a href="javascript"><span class="glyphicon glyphicon-tag"></span>Edit Type</a>
+		 	</li>
+		 	<li>
+		 		<a href="javascript"><span class="glyphicon glyphicon-user"></span>Change Member</a>
+		 	</li>
+		 	<li>
+		 		<a href="javascript"><span class="glyphicon glyphicon-arrow-right"></span>Move</a>
+		 	</li>
+		 	<li>
+		 		<a href="javascript"><span class="glyphicon glyphicon-floppy-disk"></span>Copy</a>
+		 	</li>
+		 	<li>
+		 		<a href="javascript"><span class="glyphicon glyphicon-time"></span>Change Duedate</a>
+		 	</li>
+		 </ul>
+ 	</div>
+ </div>

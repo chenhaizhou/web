@@ -1,0 +1,53 @@
+[
+    {
+        "name": "To Do", 
+        "data": [
+            {
+                "type": "story", 
+                "member": [
+                    "HZ", 
+                    "LL"
+                ], 
+                "title": "add html page relatade create", 
+                "date": "2014-11-07"
+            }, 
+            {
+                "type": "task", 
+                "member": [
+                    "C"
+                ], 
+                "title": "delete html page relatade create", 
+                "date": "2014-11-07"
+            }, 
+            {
+                "type": "bug", 
+                "member": [
+                    "SH"
+                ], 
+                "title": "update html page relatade create"
+            }, 
+            {
+                "type": "wran", 
+                "member": [
+                    "XA", 
+                    "BS", 
+                    "Q"
+                ], 
+                "title": "change html page relatade create", 
+                "date": "2014-11-07"
+            }
+        ]
+    }, 
+    {
+        "name": "Doing", 
+        "data": [ ]
+    }, 
+    {
+        "name": "Q&A", 
+        "data": [ ]
+    }, 
+    {
+        "name": "Done", 
+        "data": [ ]
+    }
+]
