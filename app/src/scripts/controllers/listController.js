@@ -43,13 +43,21 @@ define(['jquery'],function ($){
 			$scope.list[index].data.shift();
 		};
 
-		$scope.editCard = function(e,index,cardTitle){
-			var w = $('.container-fluid .col-lg-3').width(),el = $(e.target).offset();
+		$scope.editCard = function(e,index,cardTitle,i){
+			var w = $('.container-fluid .col-lg-3').width(),el = $(e.target).offset(),index = $(e.target).parents('.col-lg-3').index();
 			$scope.modal = true;
 			$scope.cardEditTitle = cardTitle;
 			$scope.shadeTop = el.top - 15;
 			$scope.shadeLeft = el.left - w + 32;
 			$scope.shadeWidth = w;
+			$scope.index = index;
+			$scope.i = i;
+		};
+
+		$scope.saveEditCard = function(index,cardEditTitle,i){
+			//console.log(index,cardEditTitle,i);
+			$scope.list[index].data[i].title = cardEditTitle;
+			$scope.modal = false;
 		};
 
 	};

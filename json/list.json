@@ -40,14 +40,44 @@
     }, 
     {
         "name": "Doing", 
-        "data": [ ]
+        "data": [ 
+        	{
+                "type": "task", 
+                "member": [
+                    "C"
+                ], 
+                "title": "delete html page relatade create", 
+                "date": "2014-11-07"
+            }
+        ]
     }, 
     {
         "name": "Q&A", 
-        "data": [ ]
+        "data": [ 
+        	{
+                "type": "wran", 
+                "member": [
+                    "XA", 
+                    "BS", 
+                    "Q"
+                ], 
+                "title": "change html page relatade create", 
+                "date": "2014-11-07"
+            }
+        ]
     }, 
     {
         "name": "Done", 
-        "data": [ ]
+        "data": [ 
+            {
+                "type": "story", 
+                "member": [
+                    "HZ", 
+                    "LL"
+                ], 
+                "title": "add html page relatade create", 
+                "date": "2014-11-07"
+            }
+        ]
     }
 ]
