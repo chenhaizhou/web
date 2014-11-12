@@ -15,7 +15,7 @@
 					</div>
 					<!-- edit -->
 					<div class="edit" ng-show="showEdit">
-						<span class="glyphicon glyphicon-pencil" ng-click="editCard($event,index,card.title,$index)"></span>
+						<span class="glyphicon glyphicon-pencil" ng-click="editCard($event,card.title,$index)"></span>
 					</div>
 					<!-- -->
 					<div class="date" ng-if="card.date">
@@ -43,25 +43,34 @@
  <div class="shade" ng-show="modal">
  	<div class="shade-bg"></div>
  	<div class="card-form" style="width:{{ shadeWidth }}px;left:{{ shadeLeft }}px;top:{{ shadeTop }}px;">
- 		<textarea ng-model="cardEditTitle">{{ cardEditTitle }}</textarea>
+ 		<textarea ng-model="cardEditTitle" class="{{ cardLable }}">{{ cardEditTitle }}</textarea>
  		<input type="button" class="btn btn-success" value="Save" ng-click="saveEditCard(index,cardEditTitle,i)">
 		<span class="glyphicon glyphicon-remove cancel" ng-click="modal=false"></span>
 
 		 <ul class="menu">
 		 	<li>
-		 		<a href="javascript"><span class="glyphicon glyphicon-tag"></span>Edit Type</a>
+		 		<a href="javascript:;" ng-click="typeLable = !typeLable"><span class="glyphicon glyphicon-tag"></span>Edit Type</a>
+		 		<div class="typeBox" ng-show="typeLable">
+		 			<h6>Card Type</h6>
+		 			<ul>
+			 			<li class="story" ng-click="cardLable = story">Story</li>
+			 			<li class="task" ng-click="cardLable = task">Task</li>
+			 			<li class="bug" ng-click="cardLable = bug">Bug</li>
+			 			<li class="wran" ng-click="cardLable = wran">Wran</li>
+			 		</ul>
+		 		</div>
 		 	</li>
 		 	<li>
-		 		<a href="javascript"><span class="glyphicon glyphicon-user"></span>Change Member</a>
+		 		<a href="javascript:;"><span class="glyphicon glyphicon-user"></span>Change Member</a>
 		 	</li>
 		 	<li>
-		 		<a href="javascript"><span class="glyphicon glyphicon-arrow-right"></span>Move</a>
+		 		<a href="javascript:;"><span class="glyphicon glyphicon-arrow-right"></span>Move</a>
 		 	</li>
 		 	<li>
-		 		<a href="javascript"><span class="glyphicon glyphicon-floppy-disk"></span>Copy</a>
+		 		<a href="javascript:;"><span class="glyphicon glyphicon-floppy-disk"></span>Copy</a>
 		 	</li>
 		 	<li>
-		 		<a href="javascript"><span class="glyphicon glyphicon-time"></span>Change Duedate</a>
+		 		<a href="javascript:;"><span class="glyphicon glyphicon-time"></span>Change Duedate</a>
 		 	</li>
 		 </ul>
  	</div>

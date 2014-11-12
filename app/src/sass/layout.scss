@@ -72,6 +72,18 @@ body {
 			cursor: pointer;
 		}
 	}
+	.task {
+		border-color: $task;
+	}
+	.story {
+		border-color: $story;
+	}
+	.bug {
+		border-color: $bug;
+	}
+	.wran {
+		border-color: $wran;
+	}
 }
 
 textarea {
@@ -151,18 +163,6 @@ a.title {
 	line-height:120%;
 }
 
-.task {
-	border-color: #5cb85c!important;
-}
-.story {
-	border-color: #5bc0de!important;
-}
-.bug {
-	border-color: #d9534f!important;
-}
-.wran {
-	border-color: #f0ad4e!important;
-}
 
 
 .menu-box {
@@ -231,6 +231,20 @@ a.title {
 			padding:5px;
 			height:auto;
 			min-height: 80px;
+			border-left-width: 3px;
+			border-left-style: solid; 
+			&.task {
+				border-color: $task;
+			}
+			&.story {
+				border-color: $story;
+			}
+			&.bug {
+				border-color: $bug;
+			}
+			&.wran {
+				border-color: $wran;
+			}
 
 		}
 		.cancel {
@@ -259,6 +273,40 @@ a.title {
 					span {
 						margin-right:10px;
 					}
+				}
+			}
+			.typeBox {
+				width:240px;
+				position:absolute;
+				top:30px;
+				left:0;
+				background-color: $white;
+				border-radius: 5px;
+				padding: 10px;
+				z-index:2;
+				h5 {
+					border-bottom:1px solid lighten($black, 80%);
+					padding:5px 0 10px;
+				}
+				li {
+					margin:10px 0;
+					padding:5px 10px;
+					color: $white;
+					font-size: 14px;
+					border-radius: 5px;
+					cursor: pointer;
+				}
+				.story {
+					background-color: $story;
+				}
+				.task {
+					background-color: $task;
+				}
+				.bug {
+					background-color: $bug;
+				}
+				.wran {
+					background-color: $wran;
 				}
 			}
 		}

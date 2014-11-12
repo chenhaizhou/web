@@ -25,11 +25,6 @@ define(['ngMock','routes'],function (){
 
 			});
 
-			xit('root url should load home',function(){
-				expect(route.routes['/'].redirectTo).toEqual('homeController');
-
-			});
-
 			it('when other url should load home',function(){
 				expect(route.routes[null].redirectTo).toEqual('/home');
 

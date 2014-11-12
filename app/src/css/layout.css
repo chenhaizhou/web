@@ -111,6 +111,18 @@ ul, li {
   color: #999999;
   cursor: pointer;
 }
+.box .task {
+  border-color: #5cb85c;
+}
+.box .story {
+  border-color: #5bc0de;
+}
+.box .bug {
+  border-color: #d9534f;
+}
+.box .wran {
+  border-color: #f0ad4e;
+}
 
 textarea {
   border-width: 0;
@@ -188,22 +200,6 @@ a.title {
   line-height: 120%;
 }
 
-.task {
-  border-color: #5cb85c !important;
-}
-
-.story {
-  border-color: #5bc0de !important;
-}
-
-.bug {
-  border-color: #d9534f !important;
-}
-
-.wran {
-  border-color: #f0ad4e !important;
-}
-
 .menu-box {
   position: absolute;
   width: 240px;
@@ -272,6 +268,20 @@ a.title {
   padding: 5px;
   height: auto;
   min-height: 80px;
+  border-left-width: 3px;
+  border-left-style: solid;
+}
+.shade .card-form textarea.task {
+  border-color: #5cb85c;
+}
+.shade .card-form textarea.story {
+  border-color: #5bc0de;
+}
+.shade .card-form textarea.bug {
+  border-color: #d9534f;
+}
+.shade .card-form textarea.wran {
+  border-color: #f0ad4e;
 }
 .shade .card-form .cancel {
   margin-left: 10px;
@@ -301,6 +311,40 @@ a.title {
 }
 .shade .card-form .menu li a span {
   margin-right: 10px;
+}
+.shade .card-form .menu .typeBox {
+  width: 240px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 2;
+}
+.shade .card-form .menu .typeBox h5 {
+  border-bottom: 1px solid #cccccc;
+  padding: 5px 0 10px;
+}
+.shade .card-form .menu .typeBox li {
+  margin: 10px 0;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.shade .card-form .menu .typeBox .story {
+  background-color: #5bc0de;
+}
+.shade .card-form .menu .typeBox .task {
+  background-color: #5cb85c;
+}
+.shade .card-form .menu .typeBox .bug {
+  background-color: #d9534f;
+}
+.shade .card-form .menu .typeBox .wran {
+  background-color: #f0ad4e;
 }
 
 /*# sourceMappingURL=layout.css.map */

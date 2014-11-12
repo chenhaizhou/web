@@ -57,10 +57,10 @@ define(['controllers/listController'],function (listController){
 						return {left:0,top:0};
 					}
 				}*/
-				target: '<body></body>'
-			}, 
-			cardTitle = 'bbb', 
-			i = 0;
+					target: '<body></body>'
+				}, 
+				cardTitle = 'bbb', 
+				i = 0;
 
 			scope.editCard(e,cardTitle,i);
 			expect(scope.cardEditTitle).toEqual(cardTitle);

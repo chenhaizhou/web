@@ -6,16 +6,17 @@ define(['services/listService', 'ngMock'],function (listService){
 		beforeEach(inject(function ($http, $q, _$httpBackend_){
 			$httpBackend = _$httpBackend_;
 			service = listService($http, $q);
+			
+			
+			jasmine.getJSONFixtures().fixturesPath='base/json';
+			
 		}));
 
 		it('should list get success',function(){
-			$httpBackend.whenGET('/json/list.json').respond([{
-				id:1,
-				name: '2'
-			}]);
+			$httpBackend.whenGET('/json/list.json').respond(getJSONFixture('list.json'));
 
 			service.getList().then(function (data) {
-				expect(data.length).toEqual(1);
+				expect(data.length).toEqual(4);
 			});
 
 			$httpBackend.flush();

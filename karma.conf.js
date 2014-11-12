@@ -10,7 +10,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'requirejs'],
+    frameworks: ['jasmine-jquery','jasmine', 'requirejs'],
 
 
     // list of files / patterns to load in the browser
@@ -19,17 +19,18 @@ module.exports = function(config) {
       {pattern: 'bower_components/angularjs/angular.js', included: false},
       {pattern: 'bower_components/angular-route/angular-route.js', included: false},
       {pattern: 'bower_components/angular-mocks/angular-mocks.js', included: false},
+      //{pattern: 'node_modules/jasmine-jquery/lib/jasmine-jquery.js', included: false},
       {pattern: 'app/src/scripts/*.js', included: false},
       {pattern: 'app/src/scripts/**/*.js', included: false},
       {pattern: 'test/**/*.spec.js', included: false},
+      {pattern: 'json/*.json', watched: true, served: true, included: false},
       'test/test-main.js'
     ],
 
 
     // list of files to exclude
     exclude: [
-      'app/src/scripts/main.js',
-      'bower_components/jasmine/**/*.js'
+      'app/src/scripts/main.js'
     ],
 
 
