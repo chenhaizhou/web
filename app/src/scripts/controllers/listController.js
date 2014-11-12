@@ -58,6 +58,7 @@ define(['jquery'],function ($){
 
 		$scope.saveEditCard = function(index,cardEditTitle,i){
 			$scope.list[index].data[i].title = cardEditTitle;
+			$scope.list[index].data[i].type = cardLable;
 			$scope.modal = false;
 		};
 
