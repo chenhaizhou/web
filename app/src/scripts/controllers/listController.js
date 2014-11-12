@@ -43,8 +43,10 @@ define(['jquery'],function ($){
 			$scope.list[index].data.shift();
 		};
 
-		$scope.editCard = function(e,index,cardTitle,i){
-			var w = $('.container-fluid .col-lg-3').width(),el = $(e.target).offset(),index = $(e.target).parents('.col-lg-3').index();
+		$scope.editCard = function(e,cardTitle,i){
+			var w = $('.container-fluid .col-lg-3').width(),
+				el = $(e.target).offset(),
+				index = $(e.target).parents('.col-lg-3').index();
 			$scope.modal = true;
 			$scope.cardEditTitle = cardTitle;
 			$scope.shadeTop = el.top - 15;
@@ -55,7 +57,6 @@ define(['jquery'],function ($){
 		};
 
 		$scope.saveEditCard = function(index,cardEditTitle,i){
-			//console.log(index,cardEditTitle,i);
 			$scope.list[index].data[i].title = cardEditTitle;
 			$scope.modal = false;
 		};
