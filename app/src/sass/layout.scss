@@ -55,6 +55,7 @@ body {
 			background-color: lighten($black, 98%);
 		}
 		&.add-status {
+			padding:0;
 			background-color: lighten($black, 94%);
 			box-shadow: none;
 			border-left-color: lighten($black, 94%);

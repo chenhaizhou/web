@@ -124,6 +124,6 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('cls', ['clean']);
 
-	grunt.registerTask('default', ['jshint','copy','css','concat:css','cssmin']);
+	grunt.registerTask('default', ['jshint','js','copy','css','concat:css','cssmin']);
 
 };

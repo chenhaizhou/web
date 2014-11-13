@@ -43,35 +43,36 @@ define(['controllers/listController'],function (listController){
 		});
 
 		it('should saveEditCard title is change',function(){
-			var index = 0, cardEditTitle = 'aaa', i = 0;
+			var index = 0, i = 0;
 
-			scope.saveEditCard(index,cardEditTitle,i);
-			expect(scope.list[index].data[i].title).toEqual(cardEditTitle);
+			scope.cardEditTitle = 'aaa';
+
+			scope.saveEditCard(index,i);
+			expect(scope.list[index].data[i].title).toEqual(scope.cardEditTitle);
 			expect(scope.modal).toBeFalsy();
 		});
 
 		it('should editCard title is change',function(){
 			var e = {
-				/*target:{
-					offset:function(){
-						return {left:0,top:0};
-					}
-				}*/
-					target: '<body></body>'
+					target: '<div></div>'
 				}, 
-				cardTitle = 'bbb', 
-				i = 0;
+				i = 0, index = 0;
 
-			scope.editCard(e,cardTitle,i);
-			expect(scope.cardEditTitle).toEqual(cardTitle);
+			scope.list[index].data[i].title = 'bbb';
+
+			scope.editCard(e,index, i);
+			expect(scope.cardEditTitle).toEqual(scope.list[index].data[i].title);
 		});
 
-		it('should saceCard title is not undefiend',function(){
-			var index = 0, cardTitle = 'ccc';
+		it('should saveCard title is not undefiend',function(){
+			var index = 0, vm;
+			vm = scope.vm = {};
+			vm.cardNewTitle = 'ccc';
 
 			scope.addCard(index);
-			scope.saveCard(index, cardTitle);
-			expect(scope.list[index].data[0].title).toEqual(cardTitle);
+			scope.saveCard(index);
+			console.log(scope.list[0].data[0]);
+			expect(scope.list[index].data[0].title).toEqual(vm.cardNewTitle);
 		});
 
 		it('should menuShow menuBox is show',function(){
@@ -79,7 +80,7 @@ define(['controllers/listController'],function (listController){
 				target: '<div></div>'
 			};
 
-			scope.showMenu(e);
+			scope.showMenu(e,0);
 			expect(scope.menuBox).toBeTruthy();
 			expect(scope.index).toBeDefined();
 			expect(scope.menuBoxTop).toBeDefined();

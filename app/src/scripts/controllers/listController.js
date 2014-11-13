@@ -2,20 +2,22 @@ define(['jquery'],function ($){
 	'use strict';
 
 	return function ($scope, listService){
+
+		var vm = $scope.vm = {};
 		
 		listService.getList().then(function (data) {
 			$scope.list = data;
 		});
 
-		$scope.showMenu = function(e){
+		$scope.showMenu = function(e, column){
 			var el = $(e.target).offset(), 
 				winWidth = $('.container-fluid').width(), 
-				menuWidth = $('.menu-box').width(), 
-				index = $(e.target).parents('.col-lg-3').index(),
+				menuWidth = $('.menu-box').width(),
+				//index = $(e.target).parents('.col-lg-3').index(),
 				l;
 			$scope.menuBox = true;
 			$scope.menuBoxTop = el.top - $('nav').height() + 20;
-			$scope.index = index;
+			$scope.index = column;
 
 			l = menuWidth + el.left >= winWidth ? winWidth - menuWidth : el.left;
 
@@ -33,9 +35,9 @@ define(['jquery'],function ($){
 			$scope.close();
 		};
 
-		$scope.saveCard = function(index,cardTitle){
+		$scope.saveCard = function(index){
 			$scope.list[index].data[0] = {
-				'title': cardTitle
+				'title': $scope.vm.cardNewTitle
 			};
 		};
 
@@ -43,22 +45,24 @@ define(['jquery'],function ($){
 			$scope.list[index].data.shift();
 		};
 
-		$scope.editCard = function(e,cardTitle,i){
+		$scope.editCard = function(e,column,row){
 			var w = $('.container-fluid .col-lg-3').width(),
-				el = $(e.target).offset(),
-				index = $(e.target).parents('.col-lg-3').index();
+				el = $(e.target).offset();
+				//index = $(e.target).parents('.col-lg-3').index();
 			$scope.modal = true;
-			$scope.cardEditTitle = cardTitle;
+			$scope.cardEditTitle = $scope.list[column].data[row].title;
 			$scope.shadeTop = el.top - 15;
 			$scope.shadeLeft = el.left - w + 32;
 			$scope.shadeWidth = w;
-			$scope.index = index;
-			$scope.i = i;
+			$scope.index = column;
+			$scope.i = row;
+
+			$scope.cardLable = $scope.list[column].data[row].type;
 		};
 
-		$scope.saveEditCard = function(index,cardEditTitle,i){
-			$scope.list[index].data[i].title = cardEditTitle;
-			$scope.list[index].data[i].type = cardLable;
+		$scope.saveEditCard = function(index,i){
+			$scope.list[index].data[i].title = $scope.cardEditTitle;
+			$scope.list[index].data[i].type = $scope.cardLable;
 			$scope.modal = false;
 		};
 

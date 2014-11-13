@@ -1,21 +1,21 @@
 <div class="container-fluid dashboard">
-	<div class="col-lg-3" ng-repeat=" obj in list">
+	<div class="col-lg-3" ng-repeat=" obj in list" ng-init="obj.index = $index">
 		<div class="box">
 			<h4>{{ obj.name }}</h4>
 			<div class="menu">
-				<span class="glyphicon glyphicon-download" ng-click="showMenu($event)"></span>
+				<span class="glyphicon glyphicon-download" ng-click="showMenu($event, obj.index)"></span>
 			</div>
 			<ul>
-				<li ng-repeat="card in obj.data" class="{{ card.type }}" ng-class="{'add-status':!card.title}" ng-mouseenter="showEdit = card.title" ng-mouseleave="showEdit = false">
+				<li ng-repeat="card in obj.data" ng-init="card.index = $index" class="{{ card.type }}" ng-class="{'add-status':!card.title}" ng-mouseenter="showEdit = card.title" ng-mouseleave="showEdit = false">
 					<a href="" class="title" ng-if="card.title">{{ card.title }}</a>
-					<div ng-if="!card.title" >
-						<textarea ng-model="cardTitle"></textarea>
-						<input type="button" class="btn btn-success" value="Save" ng-click="saveCard(index,cardTitle)">
+					<div ng-if="!card.title">
+						<textarea ng-model="vm.cardNewTitle"></textarea>
+						<input type="button" class="btn btn-success" value="Save" ng-click="saveCard(index)">
 						<span class="glyphicon glyphicon-remove cancel" ng-click="cancelCard(index)"></span>
 					</div>
 					<!-- edit -->
 					<div class="edit" ng-show="showEdit">
-						<span class="glyphicon glyphicon-pencil" ng-click="editCard($event,card.title,$index)"></span>
+						<span class="glyphicon glyphicon-pencil" ng-click="editCard($event,obj.index, card.index)"></span>
 					</div>
 					<!-- -->
 					<div class="date" ng-if="card.date">
@@ -44,7 +44,7 @@
  	<div class="shade-bg"></div>
  	<div class="card-form" style="width:{{ shadeWidth }}px;left:{{ shadeLeft }}px;top:{{ shadeTop }}px;">
  		<textarea ng-model="cardEditTitle" class="{{ cardLable }}">{{ cardEditTitle }}</textarea>
- 		<input type="button" class="btn btn-success" value="Save" ng-click="saveEditCard(index,cardEditTitle,i)">
+ 		<input type="button" class="btn btn-success" value="Save" ng-click="saveEditCard(index,i)">
 		<span class="glyphicon glyphicon-remove cancel" ng-click="modal=false"></span>
 
 		 <ul class="menu">

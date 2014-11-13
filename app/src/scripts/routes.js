@@ -1,7 +1,7 @@
 define(['angular','ngRoute'], function (angular) {
 	'use strict';
 	angular.module('routes',['ngRoute'])
-  .config(['$routeProvider','$locationProvider', function ($routeProvider,$locationProvider) {
+  .config(['$routeProvider','$locationProvider', function ($routeProvider, $locationProvider) {
 	    $routeProvider.when('/home',
         {
           templateUrl: '/app/views/home.html',
@@ -18,6 +18,7 @@ define(['angular','ngRoute'], function (angular) {
         });
 
       //$locationProvider.html5Mode(true); 
+      $locationProvider.html5Mode(true);
 
 	}]);
 });
