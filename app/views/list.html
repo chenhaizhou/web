@@ -6,7 +6,7 @@
 				<span class="glyphicon glyphicon-download" ng-click="showMenu($event, obj.index)"></span>
 			</div>
 			<ul>
-				<li ng-repeat="card in obj.data" ng-init="card.index = $index" class="{{ card.type }}" ng-class="{'add-status':!card.title}" ng-mouseenter="showEdit = card.title" ng-mouseleave="showEdit = false">
+				<li ng-repeat="card in obj.data | filter:{title:keyword} " ng-init="card.index = $index" class="{{ card.type }}" ng-class="{'add-status':!card.title}" ng-mouseenter="showEdit = card.title" ng-mouseleave="showEdit = false">
 					<a href="" class="title" ng-if="card.title">{{ card.title }}</a>
 					<div ng-if="!card.title">
 						<textarea ng-model="vm.cardNewTitle"></textarea>

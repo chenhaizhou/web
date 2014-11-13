@@ -71,7 +71,6 @@ define(['controllers/listController'],function (listController){
 
 			scope.addCard(index);
 			scope.saveCard(index);
-			console.log(scope.list[0].data[0]);
 			expect(scope.list[index].data[0].title).toEqual(vm.cardNewTitle);
 		});
 
