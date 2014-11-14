@@ -1,4 +1,5 @@
-define(['angular'], function(angular) {
+define(['angular','./nameFilter'], function(angular,nameFilter) {
   'use strict';
-  return angular.module('filters', []);
+  return angular.module('filters', [])
+  .filter('nameFilter',[nameFilter]);
 });

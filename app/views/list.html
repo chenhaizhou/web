@@ -19,10 +19,10 @@
 					</div>
 					<!-- -->
 					<div class="date" ng-if="card.date">
-						<i class="glyphicon glyphicon-time"></i>{{ card.date }}
+						<i class="glyphicon glyphicon-time"></i>{{ card.date | date:'yyyy-MM-dd' }}
 					</div>
 					<div class="list-card-member" ng-if="card.member">
-						<span ng-repeat="m in card.member">{{ m }}</span>
+						<span class="member" ng-repeat="m in card.member" title="{{ m }}">{{ m | nameFilter }}</span>
 					</div>
 				</li>
 			</ul>     
@@ -50,8 +50,8 @@
 		 <ul class="menu">
 		 	<li>
 		 		<a href="javascript:;" ng-click="typeLable = !typeLable"><span class="glyphicon glyphicon-tag"></span>Edit Type</a>
-		 		<div class="typeBox" ng-show="typeLable">
-		 			<h6>Card Type</h6>
+		 		<div class="popbox type-box" ng-show="typeLable">
+		 			<h5>Card Type</h5>
 		 			<ul>
 			 			<li class="story" ng-click="cardLable = 'story';typeLable = false;">Story</li>
 			 			<li class="task" ng-click="cardLable = 'task';typeLable = false;">Task</li>
@@ -61,7 +61,19 @@
 		 		</div>
 		 	</li>
 		 	<li>
-		 		<a href="javascript:;"><span class="glyphicon glyphicon-user"></span>Change Member</a>
+		 		<a href="javascript:;" ng-click="addMemberShow = !addMemberShow"><span class="glyphicon glyphicon-user"></span>Change Member</a>
+		 		<div class="popbox member-box" ng-show="addMemberShow">
+		 			<h5>Member</h5>
+		 			<input type="text" class="form-control" placeholder="Member..." ng-model="memberFilter">
+		 			<ul class="list-card-member">
+		 				<li ng-click="addMember(m.id)" ng-repeat="m in members | filter:{'name':memberFilter}">
+		 					<span class="member">{{ m.name | nameFilter }}</span>
+		 					<i class="glyphicon glyphicon-ok"></i>
+		 						{{ m.name }}
+		 					<strong>({{ m.id }})</strong>
+		 				</li>
+		 			</ul>
+		 		</div>
 		 	</li>
 		 	<li>
 		 		<a href="javascript:;"><span class="glyphicon glyphicon-arrow-right"></span>Move</a>

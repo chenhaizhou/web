@@ -5,36 +5,36 @@
             {
                 "type": "story", 
                 "member": [
-                    "HZ", 
-                    "LL"
+                    "Haizhou Chen", 
+                    "Linv Li"
                 ], 
                 "title": "add html page relatade create", 
-                "date": "2014-11-07"
+                "date": "2014-11-07 12:01:23"
             }, 
             {
                 "type": "task", 
                 "member": [
-                    "C"
+                    "chenglei"
                 ], 
                 "title": "delete html page relatade create", 
-                "date": "2014-11-07"
+                "date": "2014-11-07 22:45:34"
             }, 
             {
                 "type": "bug", 
                 "member": [
-                    "SH"
+                    "shenjun"
                 ], 
                 "title": "update html page relatade create"
             }, 
             {
                 "type": "wran", 
                 "member": [
-                    "XA", 
-                    "BS", 
-                    "Q"
+                    "Xia Tian", 
+                    "Baidu", 
+                    "Qiyao"
                 ], 
                 "title": "change html page relatade create", 
-                "date": "2014-11-07"
+                "date": "2014-11-07 23:43:23"
             }
         ]
     }, 
@@ -44,10 +44,10 @@
         	{
                 "type": "task", 
                 "member": [
-                    "C"
+                    "chenlei"
                 ], 
                 "title": "delete html page relatade create", 
-                "date": "2014-11-07"
+                "date": "2014-11-07 14:33:43"
             }
         ]
     }, 
@@ -57,12 +57,12 @@
         	{
                 "type": "wran", 
                 "member": [
-                    "XA", 
-                    "BS", 
-                    "Q"
+                    "Xia Tian", 
+                    "Baidu", 
+                    "Qiyao"
                 ], 
                 "title": "change html page relatade create", 
-                "date": "2014-11-07"
+                "date": "2014-11-07 21:34:11"
             }
         ]
     }, 
@@ -72,11 +72,11 @@
             {
                 "type": "story", 
                 "member": [
-                    "HZ", 
-                    "LL"
+                    "Haizhou Chen", 
+                    "Linv Li"
                 ], 
                 "title": "add html page relatade create", 
-                "date": "2014-11-07"
+                "date": "2014-11-07 02:34:44"
             }
         ]
     }

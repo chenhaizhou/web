@@ -1,13 +1,18 @@
 define(['jquery'],function ($){
 	'use strict';
 
-	return function ($scope, listService){
+	return function ($scope, listService, memberService){
 
 		var vm = $scope.vm = {};
 		
 		listService.getList().then(function (data) {
 			$scope.list = data;
 		});
+
+		memberService.getMember().then(function (data) {
+			$scope.members = data;
+		});
+
 
 		$scope.showMenu = function(e, column){
 			var el = $(e.target).offset(), 
@@ -58,6 +63,7 @@ define(['jquery'],function ($){
 			$scope.i = row;
 
 			$scope.cardLable = $scope.list[column].data[row].type;
+			$scope.cardMember = $scope.list[column].data[row].member;
 		};
 
 		$scope.saveEditCard = function(index,i){

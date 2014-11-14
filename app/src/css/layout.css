@@ -151,10 +151,8 @@ section {
 
 .list-card-member {
   float: right;
-  bottom: 10px;
-  right: 10px;
 }
-.list-card-member span {
+.list-card-member .member {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -297,6 +295,7 @@ a.title {
 }
 .shade .card-form .menu li {
   margin: 5px 0 10px;
+  position: relative;
 }
 .shade .card-form .menu li a {
   padding: 5px 10px;
@@ -313,8 +312,29 @@ a.title {
 .shade .card-form .menu li a span {
   margin-right: 10px;
 }
-.shade .card-form .menu .typeBox {
-  width: 240px;
+.shade .card-form .menu .type-box li {
+  margin: 10px 0;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.shade .card-form .menu .type-box .story {
+  background-color: #5bc0de;
+}
+.shade .card-form .menu .type-box .task {
+  background-color: #5cb85c;
+}
+.shade .card-form .menu .type-box .bug {
+  background-color: #d9534f;
+}
+.shade .card-form .menu .type-box .wran {
+  background-color: #f0ad4e;
+}
+
+.popbox {
+  width: 340px;
   position: absolute;
   top: 30px;
   left: 0;
@@ -323,29 +343,51 @@ a.title {
   padding: 10px;
   z-index: 2;
 }
-.shade .card-form .menu .typeBox h5 {
+.popbox h5 {
+  margin-top: 0;
+  padding-bottom: 10px;
   border-bottom: 1px solid #cccccc;
-  padding: 5px 0 10px;
 }
-.shade .card-form .menu .typeBox li {
-  margin: 10px 0;
-  padding: 5px 10px;
-  color: #fff;
-  font-size: 14px;
+
+.member-box ul {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.member-box .list-card-member {
+  float: none;
+}
+.member-box .list-card-member li {
+  padding: 3px;
   border-radius: 5px;
   cursor: pointer;
 }
-.shade .card-form .menu .typeBox .story {
+.member-box .list-card-member li:hover {
   background-color: #5bc0de;
+  color: #fff;
 }
-.shade .card-form .menu .typeBox .task {
-  background-color: #5cb85c;
+.member-box .list-card-member li:hover strong {
+  color: #fff;
 }
-.shade .card-form .menu .typeBox .bug {
-  background-color: #d9534f;
+.member-box .list-card-member li:hover .member {
+  color: #666666;
 }
-.shade .card-form .menu .typeBox .wran {
-  background-color: #f0ad4e;
+.member-box .list-card-member li i {
+  float: right;
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-top: 5px;
+  line-height: 16px;
+  text-align: center;
+}
+.member-box .list-card-member .member {
+  margin-right: 5px;
+  margin-left: 0;
+}
+.member-box .list-card-member strong {
+  color: #b3b3b3;
+  font-weight: normal;
 }
 
 /*# sourceMappingURL=layout.css.map */
