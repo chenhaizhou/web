@@ -1,7 +1,7 @@
 define(['controllers/listController'],function (listController){
 	'use strict';
 	describe('list contRollers', function(){
-		var scope, listService;
+		var scope, listService, memberService;
 
 		beforeEach(function(){
 			scope = {};
@@ -14,8 +14,17 @@ define(['controllers/listController'],function (listController){
 					};
 				}
 			};
+			memberService = {
+				getMember: function (callback){
+					return {
+						then: function (callback) {
+							callback([]);
+						}
+					};
+				}
+			};
 
-			listController(scope, listService);
+			listController(scope, listService, memberService);
 		});
 
 		it('should list is not null', function(){

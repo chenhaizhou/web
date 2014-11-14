@@ -45,7 +45,7 @@
  	<div class="card-form" style="width:{{ shadeWidth }}px;left:{{ shadeLeft }}px;top:{{ shadeTop }}px;">
  		<textarea ng-model="cardEditTitle" class="{{ cardLable }}">{{ cardEditTitle }}</textarea>
  		<input type="button" class="btn btn-success" value="Save" ng-click="saveEditCard(index,i)">
-		<span class="glyphicon glyphicon-remove cancel" ng-click="modal=false"></span>
+		<span class="glyphicon glyphicon-remove cancel" ng-click="cancelEditCard(index)"></span>
 
 		 <ul class="menu">
 		 	<li>
@@ -66,7 +66,7 @@
 		 			<h5>Member</h5>
 		 			<input type="text" class="form-control" placeholder="Member..." ng-model="memberFilter">
 		 			<ul class="list-card-member">
-		 				<li ng-click="addMember(m.id)" ng-repeat="m in members | filter:{'name':memberFilter}">
+		 				<li ng-click="changeMember(m.name)" ng-repeat="m in members | filter:{'name':memberFilter}">
 		 					<span class="member">{{ m.name | nameFilter }}</span>
 		 					<i class="glyphicon glyphicon-ok"></i>
 		 						{{ m.name }}
