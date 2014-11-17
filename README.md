@@ -21,7 +21,5 @@ RequireJS + AngularJS + Bootstrap + Jasmine
 
     grunt
     
-```sh
-grunt css
-```
+
   
