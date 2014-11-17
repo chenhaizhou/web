@@ -1,4 +1,4 @@
-web demo
+web front-end demo
 ========
 
 RequireJS + AngularJS + Bootstrap + Jasmine
