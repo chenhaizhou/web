@@ -64,7 +64,10 @@ module.exports = function(grunt) {
 				
 			},
 			css: {
-				src: ['bower_components/bootstrap/dist/css/bootstrap.css', 'app/src/css/*.css'],
+				src: ['bower_components/bootstrap/dist/css/bootstrap.css', 
+					'app/src/css/*.css',
+					'bower_components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css'
+					],
 				dest: 'app/dist/css/<%= pkg.name %>.css'
 			}
 		},

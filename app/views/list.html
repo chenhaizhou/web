@@ -75,7 +75,7 @@
 		 				<li ng-click="changeMember(m.name)" ng-repeat="m in members | filter:{'name':memberFilter}">
 		 					<span class="member">{{ m.name | nameFilter }}</span>
 		 					<i class="glyphicon glyphicon-ok" ng-if=" (cardMember | filter: m.name).length > 0"></i>
-		 						{{ m.name }} {{ }}
+		 						{{ m.name }}
 		 					<strong>({{ m.id }})</strong>
 		 				</li>
 		 			</ul>
@@ -88,7 +88,20 @@
 		 		<a href="javascript:;"><span class="glyphicon glyphicon-floppy-disk"></span>Copy</a>
 		 	</li>
 		 	<li>
-		 		<a href="javascript:;"><span class="glyphicon glyphicon-time"></span>Change Duedate</a>
+		 		<a href="javascript:;" ng-click="dueDateShow = !dueDateShow"><span class="glyphicon glyphicon-time"></span>Change Duedate</a>
+		 		<div class="popbox" ng-show="dueDateShow">
+		 			<h5>Change Due Date</h5>
+		 			<div class="close">
+		 				<span class="glyphicon glyphicon-remove" ng-click="dueDateShow=false"></span>
+		 			</div>
+		 			<form class="form-inline">
+		 				<div class="form-group">
+			 			 	<label for="date">Due Datetime:</label>
+							<input type="text" class="form-control" id="date" value="{{ data.date | date:'yyyy-MM-dd hh:mm:ss'}}">
+			 			 </div>
+		 			</form>
+		 			<datetimepicker data-ng-model="data.date"></datetimepicker>
+		 		</div>
 		 	</li>
 		 </ul>
  	</div>

@@ -13,7 +13,6 @@ define(['jquery'],function ($){
 			$scope.members = data;
 		});
 
-
 		$scope.showMenu = function(e, column){
 			var el = $(e.target).offset(), 
 				winWidth = $('.container-fluid').width(), 

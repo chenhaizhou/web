@@ -3,7 +3,8 @@ define(['angular',
 	'controllers/controllers',
 	'services/services', 
 	'filters/filters',
-	'directives/directives'
+	'directives/directives',
+	'dateTime'
 	], function (angular) {
 		'use strict';
 		return angular.module('app', [
@@ -11,5 +12,5 @@ define(['angular',
 			'services',
 			'filters', 
 			'directives',
-			'routes']);
+			'routes','ui.bootstrap.datetimepicker']);
 	});
