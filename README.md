@@ -11,13 +11,13 @@ RequireJS + AngularJS + Bootstrap + Jasmine
 - Bootstrap 3.2.0
 - Jasmine 2.0.4 
 
-###install
+###Brower
 
     brower brower install
+    
+###Grunt
 
     npm install
-
-###start
 
     grunt
     
