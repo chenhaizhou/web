@@ -50,9 +50,9 @@ define(['jquery'],function ($){
 			$scope.list[index].data.shift();
 		};
 
-		$scope.cancelEditCard = function(index){
+		$scope.cancelEditCard = function(column,row){
 			$scope.modal = false;
-			$scope.cardMember = $scope.oldMamber;
+			$scope.list[column].data[row].member = $scope.oldMamber;
 		};
 
 		$scope.editCard = function(e,column,row){
@@ -68,7 +68,8 @@ define(['jquery'],function ($){
 			$scope.i = row;
 
 			$scope.cardLable = $scope.list[column].data[row].type;
-			$scope.oldMamber = $scope.cardMember = $scope.list[column].data[row].member;
+			$scope.cardMember = $scope.list[column].data[row].member;
+			$scope.oldMamber = $scope.cardMember.join().split(",");
 		};
 
 		$scope.saveEditCard = function(index,i){
@@ -85,7 +86,8 @@ define(['jquery'],function ($){
 			}else{
 				memberArr.push(memberId);
 			}
-			//$scope.cardMember = members;
+
+			//$scope.cardMember = memberArr;
 		};
 
 	};

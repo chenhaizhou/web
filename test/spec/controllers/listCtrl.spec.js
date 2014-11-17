@@ -68,6 +68,7 @@ define(['controllers/listController'],function (listController){
 				i = 0, index = 0;
 
 			scope.list[index].data[i].title = 'bbb';
+			scope.list[index].data[i].member = [];
 
 			scope.editCard(e,index, i);
 			expect(scope.cardEditTitle).toEqual(scope.list[index].data[i].title);

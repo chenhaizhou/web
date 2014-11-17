@@ -45,13 +45,16 @@
  	<div class="card-form" style="width:{{ shadeWidth }}px;left:{{ shadeLeft }}px;top:{{ shadeTop }}px;">
  		<textarea ng-model="cardEditTitle" class="{{ cardLable }}">{{ cardEditTitle }}</textarea>
  		<input type="button" class="btn btn-success" value="Save" ng-click="saveEditCard(index,i)">
-		<span class="glyphicon glyphicon-remove cancel" ng-click="cancelEditCard(index)"></span>
+		<span class="glyphicon glyphicon-remove cancel" ng-click="cancelEditCard(index,i)"></span>
 
 		 <ul class="menu">
 		 	<li>
 		 		<a href="javascript:;" ng-click="typeLable = !typeLable"><span class="glyphicon glyphicon-tag"></span>Edit Type</a>
 		 		<div class="popbox type-box" ng-show="typeLable">
 		 			<h5>Card Type</h5>
+		 			<div class="close">
+		 				<span class="glyphicon glyphicon-remove" ng-click="typeLable=false"></span>
+		 			</div>
 		 			<ul>
 			 			<li class="story" ng-click="cardLable = 'story';typeLable = false;">Story</li>
 			 			<li class="task" ng-click="cardLable = 'task';typeLable = false;">Task</li>
@@ -64,12 +67,15 @@
 		 		<a href="javascript:;" ng-click="addMemberShow = !addMemberShow"><span class="glyphicon glyphicon-user"></span>Change Member</a>
 		 		<div class="popbox member-box" ng-show="addMemberShow">
 		 			<h5>Member</h5>
+		 			<div class="close">
+		 				<span class="glyphicon glyphicon-remove" ng-click="addMemberShow=false"></span>
+		 			</div>
 		 			<input type="text" class="form-control" placeholder="Member..." ng-model="memberFilter">
 		 			<ul class="list-card-member">
 		 				<li ng-click="changeMember(m.name)" ng-repeat="m in members | filter:{'name':memberFilter}">
 		 					<span class="member">{{ m.name | nameFilter }}</span>
-		 					<i class="glyphicon glyphicon-ok"></i>
-		 						{{ m.name }}
+		 					<i class="glyphicon glyphicon-ok" ng-if=" (cardMember | filter: m.name).length > 0"></i>
+		 						{{ m.name }} {{ }}
 		 					<strong>({{ m.id }})</strong>
 		 				</li>
 		 			</ul>

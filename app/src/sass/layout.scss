@@ -300,6 +300,15 @@ a.title {
 				}
 			}
 		}
+		.close {
+			position:absolute;
+			right:10px;
+			top:5px;
+			.glyphicon {
+				color: lighten($black, 50%);
+				font-size:14px;
+			}
+		}
 	}
 }
 .popbox {

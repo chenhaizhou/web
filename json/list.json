@@ -6,7 +6,7 @@
                 "type": "story", 
                 "member": [
                     "Haizhou Chen", 
-                    "Linv Li"
+                    "Ming Lu"
                 ], 
                 "title": "add html page relatade create", 
                 "date": "2014-11-07 12:01:23"
@@ -14,7 +14,7 @@
             {
                 "type": "task", 
                 "member": [
-                    "Cheng Lei"
+                    "Chang Wu"
                 ], 
                 "title": "delete html page relatade create", 
                 "date": "2014-11-07 22:45:34"
@@ -22,16 +22,16 @@
             {
                 "type": "bug", 
                 "member": [
-                    "Shen Jun"
+                    "Xiaoming"
                 ], 
                 "title": "update html page relatade create"
             }, 
             {
                 "type": "wran", 
                 "member": [
-                    "Xia Tian", 
-                    "Baidu", 
-                    "Qiyao"
+                    "Hui Xiao", 
+                    "Jack", 
+                    "Bobo"
                 ], 
                 "title": "change html page relatade create", 
                 "date": "2014-11-07 23:43:23"
@@ -44,7 +44,7 @@
         	{
                 "type": "task", 
                 "member": [
-                    "Chen Lei"
+                    "Chang Wu"
                 ], 
                 "title": "delete html page relatade create", 
                 "date": "2014-11-07 14:33:43"
@@ -57,9 +57,9 @@
         	{
                 "type": "wran", 
                 "member": [
-                    "Xia Tian", 
-                    "Baidu", 
-                    "Qiyao"
+                    "Hui Xiao", 
+                    "Jack", 
+                    "Bobo"
                 ], 
                 "title": "change html page relatade create", 
                 "date": "2014-11-07 21:34:11"
@@ -73,7 +73,7 @@
                 "type": "story", 
                 "member": [
                     "Haizhou Chen", 
-                    "Linv Li"
+                    "Ming Lu"
                 ], 
                 "title": "add html page relatade create", 
                 "date": "2014-11-07 02:34:44"

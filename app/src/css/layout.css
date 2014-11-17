@@ -332,6 +332,15 @@ a.title {
 .shade .card-form .menu .type-box .wran {
   background-color: #f0ad4e;
 }
+.shade .card-form .close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.shade .card-form .close .glyphicon {
+  color: gray;
+  font-size: 14px;
+}
 
 .popbox {
   width: 340px;
